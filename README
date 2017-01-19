@@ -6,9 +6,7 @@ To run this example:
 0. Build the project with "mvn package", this will generate an uber-jar with the streams app and all its dependencies.
 1. Create a wordcount-input topic:
 
-    ```
     bin/kafka-topics.sh --zookeeper localhost:2181 --create --topic wordcount-input --partitions 1 --replication-factor 1
-    ```
 
 2. Produce some text to the topic. Don't forget to repeat words (so we can count higher than 1) and to use the word "the", so we can filter it.
 
