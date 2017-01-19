@@ -3,7 +3,7 @@ https://github.com/confluentinc/examples/blob/3.1.x/kafka-streams/src/main/java/
 
 To run this example:
 
-0. Build the project with "mvn package", this will generate an uber-jar with the streams app and all its dependencies.
+0. Build the project with `mvn package`, this will generate an uber-jar with the streams app and all its dependencies.
 1. Create a wordcount-input topic:
 
     `bin/kafka-topics.sh --zookeeper localhost:2181 --create --topic wordcount-input --partitions 1 --replication-factor 1`
