@@ -30,8 +30,9 @@ public class WordCountExample {
         props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
 
         // work-around for an issue around timing of creating internal topics
+        // Fixed in Kafka 0.10.2.0
         // don't use in large production apps - this increases network load
-        props.put(CommonClientConfigs.METADATA_MAX_AGE_CONFIG, 500);
+        // props.put(CommonClientConfigs.METADATA_MAX_AGE_CONFIG, 500);
 
         KStreamBuilder builder = new KStreamBuilder();
 
