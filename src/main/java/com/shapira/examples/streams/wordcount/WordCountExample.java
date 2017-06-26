@@ -20,7 +20,7 @@ public class WordCountExample {
 
         Properties props = new Properties();
         props.put(StreamsConfig.APPLICATION_ID_CONFIG, "wordcount");
-        props.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
+        props.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, args[0] + ":9092");
         props.put(StreamsConfig.KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass().getName());
         props.put(StreamsConfig.VALUE_SERDE_CLASS_CONFIG, Serdes.String().getClass().getName());
 
@@ -56,7 +56,7 @@ public class WordCountExample {
 
         // usually the stream application would be running forever,
         // in this example we just let it run for some time and stop since the input data is finite.
-        Thread.sleep(5000L);
+        Thread.sleep(5 * 60 * 1000L); // 5 mins
 
         streams.close();
 
